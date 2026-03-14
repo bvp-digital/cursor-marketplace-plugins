@@ -1,0 +1,29 @@
+---
+description: Allow-list for Jira MCP tools
+alwaysApply: true
+---
+
+# Jira MCP Tool Allow-List
+
+You are strictly permitted to use only the following Jira MCP tools:
+
+- `jira_search`
+- `jira_get_issue`
+- `jira_get_project_issues`
+- `jira_add_comment`
+- `jira_get_all_projects`
+- `jira_create_issue`
+- `jira_update_issue`
+
+## Constraints & Safety Rules
+
+1. Before making any Jira changes, provide an overview for the user to review and confirm.
+2. Never create more than 3 tickets in a single chat session.
+3. Never edit a ticket that is not in status `Open`.
+
+## Prohibited Actions
+
+- Do not use any other Jira tools without explicit user permission.
+- Never perform bulk operations.
+
+If you need a non-allow-listed tool, stop and ask for permission first.

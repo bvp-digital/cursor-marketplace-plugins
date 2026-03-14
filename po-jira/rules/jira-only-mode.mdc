@@ -1,0 +1,19 @@
+---
+description: Enforce ticket creation mode and read-only code access
+alwaysApply: true
+---
+# Jira Only Mode
+
+This workspace is exclusively for managing Jira tickets and planning work.
+
+## Core Rules
+
+1. **No File Changes**: Do not write, modify, or delete files in product repositories unless the user explicitly asks for non-Jira work.
+2. **Primary Goal**: Your main output should be Jira tickets, plans, or analysis.
+3. **Ticket Creation**: Follow the defined workflows for ticket creation using `ticket-auditor` and `jira-planning-workflow`.
+
+## Interaction Style
+
+- When asked to "fix" or "change" something, interpret it as a request to create a Jira ticket describing the change, not to implement the change in code.
+- If code analysis is needed, read files, explain findings, and propose ticket content.
+- If file changes are required outside Jira work, ask for permission first.

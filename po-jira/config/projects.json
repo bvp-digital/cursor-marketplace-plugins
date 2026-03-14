@@ -1,0 +1,9 @@
+{
+  "acceptanceCriteriaFieldId": "customfield_10092",
+  "projects": [
+    {
+      "componentsRequired": true,
+      "components": ["CMS", "ReactNative", "Frontend", "CI/CD", "DevOps"]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "po-jira",
+  "version": "1.0.1",
+  "description": "Shared Jira planning and ticket workflows, including rules, skills, an auditor agent, commands, and Atlassian MCP setup.",
+  "author": {
+    "name": "BurdaVerlagPublising GmbH"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jira",
+    "ticketing",
+    "planning",
+    "atlassian",
+    "team-workflows",
+    "product-owner",
+    "PO",
+    "ticket-creation"
+  ],
+  "commands": "./commands/",
+  "mcpServers": {
+    "mcp-jira": {
+      "command": "uvx",
+      "args": ["mcp-atlassian"],
+      "env": {
+        "JIRA_URL": "https://your-company.atlassian.net",
+        "JIRA_USERNAME": "${JIRA_USERNAME}",
+        "JIRA_API_TOKEN": "${JIRA_API_TOKEN}",
+        "JIRA_PROJECTS_FILTER": "PROJ",
+        "ENABLED_TOOLS": "jira_add_comment,jira_create_issue,jira_create_issue_link,jira_create_remote_issue_link,jira_download_attachments,jira_edit_comment,jira_get_agile_boards,jira_get_all_projects,jira_get_board_issues,jira_get_issue,jira_get_link_types,jira_get_project_issues,jira_get_project_versions,jira_get_sprint_issues,jira_get_sprints_from_board,jira_get_transitions,jira_get_user_profile,jira_get_worklog,jira_link_to_epic,jira_search,jira_search_fields,jira_transition_issue,jira_update_issue"
+      }
+    },
+    "figma": {
+      "command": "npx",
+      "args": ["-y", "figma-developer-mcp", "--stdio"],
+      "env": {
+        "FIGMA_API_KEY": "${FIGMA_API_KEY}"
+      }
+    }
+  }
+}

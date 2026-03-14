@@ -1,0 +1,50 @@
+---
+description: Workflow for planning Jira tickets before creation. References ticket creation standards.
+alwaysApply: true
+---
+
+# Ticket Creation Workflow In Plan Mode
+
+When the user wants to create Jira tickets, use plan mode to ensure accuracy and completeness before execution.
+
+## Story vs Task
+
+| Type | Format | Focus |
+|------|--------|-------|
+| **Story** | User Story: "As a [persona], I want [goal], so that [value]" | User-facing feature; target audience, goal, value, acceptance criteria |
+| **Task** | Objective + numbered steps | Work item; outcome, steps, completion criteria, dependencies |
+
+- **Story** = user-centric capability.
+- **Task** = work-centric item.
+
+Both use the same DoR and INVEST checks. Use the `jira-userstory` skill for the question sets.
+
+## Process Steps
+
+1. **Gather Information & Design Check**
+   - Clarify issue type first: Bug, Story, Task, or Epic.
+   - **Bug**: Follow the `jira-bug` skill.
+   - **Story or Task**: Follow the `jira-userstory` skill.
+   - **Epic**: Gather goal, user value, high-level scope, and known child stories.
+   - Check whether a Figma design already exists.
+   - If yes, ask for the Figma link and include it in the relevant tickets. If a Figma MCP is available, use it to fetch design context (e.g. file name, page/frame names, component names) and suggest a short "Design context" snippet or acceptance criteria for the ticket; still add the Figma link to the description.
+   - If no, ask whether a Design Briefing ticket should also be created.
+   - For Figma, use only read-style tools (e.g. get file, get node); do not create or update design content.
+   - Do not guess missing details.
+
+2. **Structure & Validate Content**
+   - Use the `ticket-auditor` agent to structure and validate ticket content.
+   - Story tickets must be ready for dev before creation.
+   - Keep Description and Acceptance Criteria separate so they can be mapped correctly.
+
+3. **Present A Plan**
+   - Show the tickets that will be created.
+   - Distinguish Description from Acceptance Criteria.
+   - Verify any design links.
+
+4. **Refine & Verify**
+   - Ask follow-up questions when information is missing or unclear.
+   - Iterate until the user is satisfied.
+
+5. **Transition To Build**
+   - When the user confirms with "build" or equivalent, create the tickets in Jira.

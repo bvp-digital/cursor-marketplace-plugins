@@ -1,0 +1,22 @@
+---
+description: Workflow for splitting a Jira story into multiple tickets. Triggered by the bundled /split command.
+alwaysApply: true
+---
+
+# Split Story Command
+
+When the user invokes `/split` or explicitly asks to split a story, follow the `jira-split-story` skill.
+
+## Trigger
+
+- User types `/split`
+- User types `/split PROJ-XXX`
+- User explicitly asks to split a story into multiple tickets
+
+## Process
+
+1. Require the source story ID if it was not provided.
+2. Follow the `jira-split-story` skill for the full workflow.
+3. Never guess where functionality belongs.
+4. Validate that all original acceptance criteria appear in at least one resulting story.
+5. Use `ticket-auditor` on each resulting story before creation.

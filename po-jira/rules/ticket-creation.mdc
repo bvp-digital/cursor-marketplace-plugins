@@ -1,0 +1,45 @@
+---
+description: Standards for Jira issue creation and editing
+alwaysApply: true
+---
+
+# Jira Ticket Standards
+
+When creating or updating tickets, you must adhere to the following rules.
+
+## Ready For Dev
+
+Every Story ticket must be ready for dev before it is created. If it is not ready, ask the user to provide the missing information.
+
+- **Definition**: Use the `jira-userstory` skill for the definition of ready and INVEST checks.
+- **Validation**: Use `ticket-auditor` or `jira-userstory`.
+
+## Content Validation & Structuring
+
+Before finalizing the content for a new ticket or an edit, use the `ticket-auditor` agent to structure and validate it.
+
+- Trigger: drafting description or acceptance criteria for a create or update flow
+- Outcome: use the structured output for Jira fields
+- If not ready: do not create the ticket
+
+## Content Tone & Technical Detail
+
+- Tickets must always be written in English.
+- Keep tickets short and precise.
+- Write from the perspective of a Product Owner with basic technical understanding.
+- Do not include implementation details such as file paths, function names, or low-level technical changes.
+- Only include technical context when it is clearly correct and essential.
+
+## Field Requirements
+
+### Acceptance Criteria
+
+- Acceptance Criteria must be placed in the custom field whose ID is defined in the plugin config. Default: `customfield_10092`. Read `config/projects.json` in the jira-team-workflows plugin directory (or `.cursor/jira-team-workflows-config.json` in the workspace if present) for `acceptanceCriteriaFieldId`.
+- Do not put Acceptance Criteria in the main `description` field.
+- The `description` field should contain the user story or bug context.
+
+### Component Requirements
+
+- For each project, component requirements are defined in the plugin config. Read `config/projects.json` from the jira-team-workflows plugin directory, or `.cursor/jira-team-workflows-config.json` in the workspace if present.
+- For every project where `componentsRequired` is true, tickets must have a component; choose from the project's `components` list.
+- If no config file is available, treat as no component requirement (or ask the user which components apply).

@@ -1,0 +1,16 @@
+{
+  "name": "bvp-digital-cursor-marketplace",
+  "owner": {
+    "name": "BurdaVerlagPublishing GmbH"
+  },
+  "metadata": {
+    "description": "Jira planning and ticket workflows"
+  },
+  "plugins": [
+    {
+      "name": "po-jira",
+      "source": "po-jira",
+      "description": "Shared Jira planning and ticket workflows including rules, skills, an auditor agent, commands, and Atlassian MCP setup."
+    }
+  ]
+}
