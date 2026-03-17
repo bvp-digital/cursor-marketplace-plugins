@@ -1,6 +1,6 @@
 {
   "name": "po-jira",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Shared Jira planning and ticket workflows, including rules, skills, an auditor agent, commands, and Atlassian MCP setup.",
   "author": {
     "name": "BurdaVerlagPublising GmbH"
