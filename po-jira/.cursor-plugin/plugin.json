@@ -1,6 +1,6 @@
 {
   "name": "po-jira",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Shared Jira planning and ticket workflows, including rules, skills, an auditor agent, commands, and Atlassian MCP setup.",
   "author": {
     "name": "BurdaVerlagPublising GmbH"
@@ -18,7 +18,7 @@
   ],
   "commands": "./commands/",
   "mcpServers": {
-    "mcp-jira": {
+    "mcp-atlassian": {
       "command": "uvx",
       "args": ["mcp-atlassian"],
       "env": {
@@ -30,11 +30,7 @@
       }
     },
     "figma": {
-      "command": "npx",
-      "args": ["-y", "figma-developer-mcp", "--stdio"],
-      "env": {
-        "FIGMA_API_KEY": "${FIGMA_API_KEY}"
-      }
+      "url": "http://127.0.0.1:3845/mcp"
     }
   }
 }

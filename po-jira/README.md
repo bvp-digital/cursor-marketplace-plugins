@@ -20,11 +20,11 @@ Cursor plugin for Jira-focused planning and ticket creation. Use it as the prima
 - `JIRA_USERNAME` – your Jira user (e.g. email)
 - `JIRA_API_TOKEN` – a Jira API token (create in Atlassian account settings)
 
-## Optional: Figma MCP (cloud)
+## Optional: Figma MCP (local desktop)
 
-For better ticket quality when designs exist, the plugin can use the Figma MCP (cloud, API-based). When you share a Figma link, the agent can fetch design context (file name, frames, components) and suggest a short "Design context" or acceptance criteria for the ticket.
+For better ticket quality when designs exist, the plugin connects to the **Figma desktop app** MCP server. When you share a Figma link or have a frame selected in Figma, the agent can fetch design context (file name, frames, components) and suggest a short "Design context" or acceptance criteria for the ticket.
 
-Set `FIGMA_API_KEY` to your Figma personal access token (Figma Settings > Account > Personal access tokens). If you do not use Figma, remove the `figma` server from the plugin’s `mcpServers` in `.cursor-plugin/plugin.json` to avoid startup errors.
+**Setup:** Open the Figma desktop app, open a Design file, switch to Dev Mode (Shift+D), and in the inspect panel enable **Enable desktop MCP server**. The server runs at `http://127.0.0.1:3845/mcp` (no API key needed). If you do not use Figma, remove the `figma` entry from `mcpServers` in `.cursor-plugin/plugin.json` to avoid startup errors.
 
 This plugin uses only read-style Figma tools; it does not create or update design content.
 
@@ -51,7 +51,7 @@ The bundled MCP server uses the shared Jira URL and project filter. Credentials 
 
 If your team uses different credentials per user, each user sets their own values before using the Atlassian MCP server.
 
-The plugin includes an optional `figma` server in its MCP config (Figma cloud/API). Set `FIGMA_API_KEY`; if you do not use Figma, remove the `figma` entry from `mcpServers` in `.cursor-plugin/plugin.json`.
+The plugin includes an optional `figma` server pointing at the Figma desktop MCP (`http://127.0.0.1:3845/mcp`). Enable the desktop MCP server in the Figma app; if you do not use Figma, remove the `figma` entry from `mcpServers` in `.cursor-plugin/plugin.json`.
 
 ## Customization (other teams / orgs)
 
